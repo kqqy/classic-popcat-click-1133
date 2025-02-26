@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--    容器 box 高度100vh flex排版 垂直 置中-->
+    <style>
+        /*字型 sans-serif*/
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            /*容器樣式 背景顏色 #bdaa90*/
+            background-color: #bdaa90;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .title {
+            /*標題 box 寬度80% 上方間距 2em*/
+            width: 80%;
+            margin-top: 2em;
+            max-width: 600px;
+        }
+
+
+
+        .cat-img {
+            /*文字 box 寬度100%*/
+            width: 100%;
+            /*文字樣式 文字置中 文字白色 大小80px -webkit-text-stroke 3px 黑色*/
+            font-size: 80px;
+            text-align: center;
+            color: white;
+            -webkit-text-stroke: 3px black;
+            /*文字 div 排版填滿剩餘空間*/
+            flex: 1;
+            /*文字 box 最大寬度 800px*/
+            max-width: 800px;
+
+        }
+        /*防止文字被選取*/
+        .cat-img {
+            user-select: none;
+        }
+
+        /*文字 div 背景圖片 用 id 設定imgs/p.png 圖片靠下 填滿容器contain 不重複*/
+        #p {
+            background-image: url('imgs/p.png');
+            background-position: center bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        /*新增文字 div 背景圖片 用 id 設定 imgs/op.png*/
+        #op {
+            background-image: url('imgs/op.png');
+            background-position: center bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /*body box 編距為0*/
+        body {
+            margin: 0;
+        }
+
+    </style>
     <meta charset="UTF-8">
     <title>POPCAT CLASSIC</title>
 </head>
 <body>
+<!--新增容器去包裹標題圖片與點擊數-->
+<div class="container">
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
     <div class="cat-img"  id="p">0</div>
+</div>
 
 </body>
 </html>
